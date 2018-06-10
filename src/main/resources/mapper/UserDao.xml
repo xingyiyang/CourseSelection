@@ -4,26 +4,27 @@
 <mapper namespace="com.zxc.dao.UserDao">
 
     <select id="selectStuById" resultType="Student" parameterType="int">
-        SELECT * FROM Student WHERE stuId=#{id}
+        SELECT * FROM student WHERE stuId=#{id}
     </select>
 
     <select id="selectTeaById" resultType="Teacher" parameterType="int">
-        SELECT * FROM Teacher WHERE teaId=#{id}
+        SELECT * FROM teacher WHERE teaId=#{id}
     </select>
 
     <update id="updateStuPass" parameterType="Student">
-        UPDATE Student SET
+        UPDATE student SET
         stuPass=#{stuPass}
         WHERE stuId=#{stuId}
     </update>
 
     <update id="updateTeaPass" parameterType="Teacher">
-        UPDATE Teacher SET
+        UPDATE teacher SET
         teaPass=#{teaPass}
         WHERE teaId=#{teaId}
     </update>
+
     <select id="queryAllTeacher" resultType="Teacher">
-        SELECT * FROM Teacher
+        SELECT * FROM teacher
     </select>
 
 </mapper>

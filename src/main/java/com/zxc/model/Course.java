@@ -84,5 +84,20 @@ public class Course {
     public int getScore() {
         return score;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "classId=" + classId +
+                ", className='" + className + '\'' +
+                ", classNum=" + classNum +
+                ", teaId=" + teaId +
+                ", teaName='" + teaName + '\'' +
+                ", classChooseNum=" + classChooseNum +
+                ", classLimitInsName=" + classLimitInsName +
+                ", score=" + score +
+                ", isChoose=" + isChoose +
+                '}';
+    }
 }
 

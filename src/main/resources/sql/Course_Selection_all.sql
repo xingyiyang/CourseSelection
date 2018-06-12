@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `Course`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Course` (
-  `classId` int(11) NOT NULL AUTO_INCREMENT,
-  `className` varchar(200) NOT NULL,
-  `classNum` int(11) NOT NULL,
-  `teaId` int(11) NOT NULL,
-  `classChooseNum` int(11) NOT NULL,
+  `classId` int(11) NOT NULL AUTO_INCREMENT COMMENT '课程id',
+  `className` varchar(200) NOT NULL COMMENT '课程名',
+  `classNum` int(11) NOT NULL COMMENT '课容量',
+  `teaId` int(11) NOT NULL COMMENT '老师id',
+  `classChooseNum` int(11) NOT NULL COMMENT '已经被选中的数量',
   PRIMARY KEY (`classId`)
-) ENGINE=InnoDB AUTO_INCREMENT=1009 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,12 +51,12 @@ DROP TABLE IF EXISTS `Course_choose`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Course_choose` (
-  `chooseId` int(11) NOT NULL AUTO_INCREMENT,
-  `stuId` int(11) NOT NULL,
-  `classId` int(11) NOT NULL,
-  `score` int(11) NOT NULL,
+  `chooseId` int(11) NOT NULL AUTO_INCREMENT COMMENT '已选课程的表id',
+  `stuId` int(11) NOT NULL COMMENT '选课学生的id',
+  `classId` int(11) NOT NULL COMMENT '被选课程的id',
+  `score` int(11) NOT NULL COMMENT '选课学生的分数',
   PRIMARY KEY (`chooseId`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,11 +78,11 @@ DROP TABLE IF EXISTS `Course_limit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Course_limit` (
-  `limitId` int(11) NOT NULL AUTO_INCREMENT,
-  `classId` int(11) NOT NULL,
-  `insId` int(11) NOT NULL,
+  `limitId` int(11) NOT NULL AUTO_INCREMENT COMMENT '根据学院限制学生选择该课程',
+  `classId` int(11) NOT NULL COMMENT '课程id',
+  `insId` int(11) NOT NULL COMMENT '学院id',
   PRIMARY KEY (`limitId`)
-) ENGINE=InnoDB AUTO_INCREMENT=1012 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,10 +104,10 @@ DROP TABLE IF EXISTS `Institution`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Institution` (
-  `insId` int(11) NOT NULL AUTO_INCREMENT,
-  `insName` varchar(200) NOT NULL,
+  `insId` int(11) NOT NULL AUTO_INCREMENT COMMENT '学院id',
+  `insName` varchar(200) NOT NULL COMMENT '学院名',
   PRIMARY KEY (`insId`)
-) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,11 +129,11 @@ DROP TABLE IF EXISTS `Student`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Student` (
-  `stuId` int(11) NOT NULL,
-  `stuName` varchar(200) NOT NULL,
-  `stuPass` varchar(200) NOT NULL,
-  `insId` int(11) DEFAULT NULL,
-  `insName` varchar(200) DEFAULT NULL,
+  `stuId` int(11) NOT NULL COMMENT '学生id',
+  `stuName` varchar(200) NOT NULL COMMENT '学生名字',
+  `stuPass` varchar(200) NOT NULL COMMENT '学生密码',
+  `insId` int(11) DEFAULT NULL COMMENT '学院id',
+  `insName` varchar(200) DEFAULT NULL COMMENT '学院名',
   PRIMARY KEY (`stuId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -157,9 +157,9 @@ DROP TABLE IF EXISTS `Teacher`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Teacher` (
-  `teaId` int(11) NOT NULL,
-  `teaName` varchar(200) NOT NULL,
-  `teaPass` varchar(200) NOT NULL,
+  `teaId` int(11) NOT NULL COMMENT '老师id',
+  `teaName` varchar(200) NOT NULL COMMENT '老师名字',
+  `teaPass` varchar(200) NOT NULL COMMENT '老师的密码',
   PRIMARY KEY (`teaId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

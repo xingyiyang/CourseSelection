@@ -121,4 +121,5 @@
     <select id="selectScore" parameterType="Course_choose" resultType="int">
         SELECT score FROM course_choose WHERE classId=#{classId} AND stuId=#{stuId}
     </select>
+
 </mapper>

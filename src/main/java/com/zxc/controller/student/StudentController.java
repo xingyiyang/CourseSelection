@@ -107,7 +107,7 @@ public class StudentController {
 
     @RequestMapping("/searchCourse")
     public String searchCourse(@Param("courseid") int courseid, Model model){
-        List<Course> cor_list=new ArrayList<>();
+        List<Course> cor_list = new ArrayList<>();
         cor_list.add(courseService.queryCourse(courseid));
         model.addAttribute("paging",pageService.subList(1,cor_list));
         model.addAttribute("teaList",userService.queryAllTeacher());

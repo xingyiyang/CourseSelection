@@ -22,6 +22,7 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> queryAllById(int id) {
         List<Course> course_list= courseDao.queryCourseById(id);
         for(Course c:course_list){
+            c.setTeaName(userDao.selectTeaById(id).getTeaName());
             c.setClassLimitInsName(new ArrayList<>());
             List<Integer> limit_list=courseDao.selectInsIdByClassId(c.getClassId());
             for(Integer i:limit_list){
@@ -240,6 +241,7 @@ public class CourseServiceImpl implements CourseService {
             }
         }
         for(Course cc:course_Inslist){
+            cc.setTeaName(userDao.selectTeaById(cc.getTeaId()).getTeaName());
             cc.setClassLimitInsName(new ArrayList<>());
             List<Integer> limit_list=courseDao.selectInsIdByClassId(cc.getClassId());
             for(Integer i:limit_list){

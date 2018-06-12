@@ -35,7 +35,7 @@
                     </div>
                     <button type="button" id="ins" class="layui-btn" style="margin-left:10px;">筛选</button>
                 </div>
-                <button type="button" class="layui-btn" style="float:right;" onclick="search()">搜索</button>
+                <button type="button" id="searchbtn" class="layui-btn" style="float:right;">搜索</button>
                 <input type="text" id="search" class="layui-input" style="float:right; width:200px;"
                        placeholder="请输入课程编号">
             </div>
@@ -140,10 +140,14 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script>
-        function search() {
+        $("#searchbtn").click(function() {
             var courseid = document.getElementById("search").value;
-            window.location.href = "<%=basePath%>student/searchCourse?courseid=" + courseid;
-        }
+            if(courseid == null || courseid == ""){
+                alert("请填写课程号");
+            }else {
+                window.location.href = "<%=basePath%>student/searchCourse?courseid=" + courseid;
+            }
+        });
 
         function goPage(page) {
             window.location.href = "<%=basePath%>student/courseList?page=" + page;
@@ -174,10 +178,11 @@
                     window.location.href="<%=basePath%>student/searchListByTeaId?teaid="+teaid;
                 }
             });
+
             $("#ins").click(function () {
                 var insid=$("#inssearch option:selected").attr("value");
                 if(insid===0){
-                    alert("请选择正确的教师姓名");
+                    alert("请选择正确的学院姓名");
                 }
                 else{
                     window.location.href="<%=basePath%>student/searchListByInsId?insid="+insid;

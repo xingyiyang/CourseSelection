@@ -12,20 +12,20 @@
         <div class="layui-form-item">
             <label class="layui-form-label">原密码</label>
             <div class="layui-input-block">
-                <input type="text" name="prepass" id="pre" placeholder="请输入原密码" autocomplete="off" class="layui-input">
+                <input type="password" name="prepass" id="pre" placeholder="请输入原密码" autocomplete="off" class="layui-input">
             </div>
             <p>${msg}</p>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">新密码</label>
             <div class="layui-input-block">
-                <input type="text" name="nowpass" id="now" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+                <input type="password" name="nowpass" id="now" placeholder="请输入新密码" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">确认密码</label>
             <div class="layui-input-block">
-                <input type="text" name="nowpassagain" id="again" placeholder="请确认新密码" autocomplete="off" class="layui-input">
+                <input type="password" name="nowpassagain" id="again" placeholder="请确认新密码" autocomplete="off" class="layui-input">
             </div>
         </div>
     </form>
